@@ -1,0 +1,16 @@
+@use "bases" as *;
+
+.link {
+  font-size: 1.4rem;
+  border: 0.15rem solid $dark-blue-color;
+  padding: 1.5rem 2rem;
+  border-radius: 0.5rem;
+  color: $dark-blue-color;
+  font-weight: bold;
+  text-transform: capitalize;
+  transition: background-color 0.3s, color 0.3s;
+  &:hover {
+    background-color: $dark-blue-color;
+    color: $white-cream-color;
+  }
+}
