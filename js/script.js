@@ -3,11 +3,12 @@ const logos = document.querySelectorAll(".logo");
 const buttons = document.querySelectorAll(".button");
 const words = document.querySelectorAll(".words");
 const images = document.querySelectorAll(".img");
-
+const others = document.querySelectorAll(".others");
+console.log(others);
 // observer options
 const options = {
   root: null,
-  threshold: 0.1,
+  threshold: 0,
 };
 // Reuseable Animation Function
 const animation = (entries, className) => {
@@ -42,12 +43,17 @@ const imgCallbackFunc = (entries) => {
   animation(entries, "img__blur");
 };
 
+const othersCallbackFunc = (entries) => {
+  animation(entries, "others__animation");
+};
+
 // Function to call on all arrayOfObject functions
 const allArrays = () => {
   arrayOfObject(logos, logoObserver);
   arrayOfObject(buttons, linkObserver);
   arrayOfObject(words, wordsObserver);
   arrayOfObject(images, imgObserver);
+  arrayOfObject(others, othersObserver);
 };
 
 // Observers
@@ -58,5 +64,5 @@ const linkObserver = new IntersectionObserver(linkCallbackFunc, options);
 const wordsObserver = new IntersectionObserver(wordsCallbackFunc, options);
 
 const imgObserver = new IntersectionObserver(imgCallbackFunc, options);
-
+const othersObserver = new IntersectionObserver(othersCallbackFunc, options);
 allArrays();
