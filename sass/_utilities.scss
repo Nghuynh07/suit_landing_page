@@ -1,0 +1,49 @@
+@use "bases" as *;
+.blur {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+
+  display: none;
+
+  @media (min-width: $breakpoint-tablet) {
+    display: block;
+    margin-top: -10rem;
+    circle {
+      opacity: 0.25;
+    }
+  }
+  @media (min-width: $breakpoint-desktop) {
+    transform: translate(-50%, -35%);
+    circle {
+      opacity: 0.4;
+    }
+  }
+}
+.logo,
+.link,
+.words {
+  transition: transform 1s;
+}
+
+.img {
+  transition: filter 1s;
+}
+
+.logo__animation {
+  transform: translateY(-5rem);
+}
+
+.link__animation {
+  transform: translate(5rem, -5rem);
+}
+
+.words__animation {
+  transform: translate(3rem, 5rem);
+}
+
+.img__blur {
+  filter: blur(10px);
+}
